@@ -18,7 +18,7 @@ app.post("/telegram", async (req, res) => {
     req.body.message.from &&
     req.body.message.from.id &&
     req.body.message.text &&
-    req.body.message.from.id === process.env.MY_TELEGRAM_ID
+    req.body.message.from.id === parseInt(process.env.MY_TELEGRAM_ID)
   ) {
     const text = req.body.message.text
     const person = JSON.parse(text);
